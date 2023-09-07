@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &551616209704398072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3604111708433949341}
+  m_Layer: 0
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3604111708433949341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551616209704398072}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.272, y: -0.208, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4198974415918610690}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4198974415918610701
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,9 +65,10 @@ Transform:
   m_LocalPosition: {x: -3.06, y: -10.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3604111708433949341}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4198974415918610691
 Animator:
@@ -97,7 +129,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115592769
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 1114090389, guid: afc07650986db47f2a869a641b047b60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -187,6 +219,9 @@ MonoBehaviour:
   moveSpeed: 5
   jumpSpeed: 18
   climbSpeed: 5
+  deathKick: {x: 0, y: 10}
+  gun: {fileID: 3604111708433949341}
+  bullet: {fileID: 0}
 --- !u!114 &8045467796580580124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +261,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4198974415918610701}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9bb2b5fbad43042c789a8025c336c3b0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -24,9 +24,6 @@ public class EnemyMovement : MonoBehaviour
         }
 
     void FlipSprite() {
-        bool playerHasHorizontalSpeed = Mathf.Abs(enemyRB.velocity.x) > Mathf.Epsilon;
-        if (playerHasHorizontalSpeed) {
-            transform.localScale = new Vector2(Mathf.Sign(enemyRB.velocity.x), 1f);
-        }
+            transform.localScale = new Vector2(-Mathf.Sign(enemyRB.velocity.x), 1f);
     }
 }
