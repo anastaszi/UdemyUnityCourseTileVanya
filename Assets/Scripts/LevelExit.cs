@@ -21,7 +21,7 @@ public class LevelExit : MonoBehaviour
         }
         Debug.Log("Loading next level" + nextSceneIndex);
         yield return new WaitForSecondsRealtime(levelLoadDelay);
-
+        FindObjectOfType<ScenePersist>().ResetScenePersist();
         SceneManager.LoadScene(nextSceneIndex);
         Debug.Log("Loading next level");
     }
