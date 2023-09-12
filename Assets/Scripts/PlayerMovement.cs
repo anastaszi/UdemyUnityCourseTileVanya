@@ -51,12 +51,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Die() {
-        if (playerBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard"))) {
+        if (playerBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard", "Water"))) {
             isAlive = false;
             playerAnimator.SetTrigger("Dying");
             playerRB.velocity = deathKick;
-            // GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 10f);
-            // FindObjectOfType<GameSession>().ProcessPlayerDeath();
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 
