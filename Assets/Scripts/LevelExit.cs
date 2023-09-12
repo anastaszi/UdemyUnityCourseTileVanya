@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelExit : MonoBehaviour
 {
+    [SerializeField] float levelLoadDelay = 2f;
     // Start is called before the first frame update
  void OnTriggerEnter2D(Collider2D other) {
     
@@ -14,9 +15,14 @@ public class LevelExit : MonoBehaviour
 
     IEnumerator LoadNextLevel() {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        yield return new WaitForSecondsRealtime(1f);
-        //FindObjectOfType<GameSession>().LoadNextLevel();
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        int nextSceneIndex = currentSceneIndex + 1;
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings) {
+            nextSceneIndex = 0;
+        }
+        Debug.Log("Loading next level" + nextSceneIndex);
+        yield return new WaitForSecondsRealtime(levelLoadDelay);
+
+        SceneManager.LoadScene(nextSceneIndex);
         Debug.Log("Loading next level");
     }
 

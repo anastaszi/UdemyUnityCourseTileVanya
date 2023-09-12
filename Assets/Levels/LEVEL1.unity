@@ -9641,10 +9641,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4198974415918610701, guid: 5f778becef7b541c485dfc7e97fc1f92, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6601783528731617863, guid: 5f778becef7b541c485dfc7e97fc1f92, type: 3}
       propertyPath: bullet
       value: 
